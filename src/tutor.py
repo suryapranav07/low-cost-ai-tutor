@@ -167,4 +167,28 @@ Answer:
         messages=[{"role": "user", "content": prompt}]
     )
 
-    return response.choices[0].message.content, baseline_tokens, final_tokens
+    return response.choices[0].message.content, baseline_tokens, final_tokens, chunks
+
+def get_related_concepts(question, answer):
+
+    prompt = f"""
+Given this question and answer, identify 4-6 closely related concepts
+a student should learn next.
+
+Question:
+{question}
+
+Answer:
+{answer}
+
+Return only bullet points.
+"""
+
+    response = client.chat.completions.create(
+        model="llama-3.1-8b-instant",
+        messages=[
+            {"role": "user", "content": prompt}
+        ]
+    )
+
+    return response.choices[0].message.content
