@@ -116,10 +116,8 @@ Saved: 87%
 ---
 
 ##  Setup Instructions
-
-### 1️ Clone repo
-
 ```bash
+### 1️ Clone repo
 git clone <your_repo_url>
 cd ai_tutor
 2️ Install dependencies
@@ -132,6 +130,7 @@ GROQ_API_KEY=your_key
 SCALEDOWN_API_KEY=your_key
 4️ Run the app
 streamlit run app.py
+```
  Project Structure
 ai_tutor/
 ├── app.py
