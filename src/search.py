@@ -31,7 +31,7 @@ def search(query, subject=None, k=3):
         if subject is not None and chunk["subject"] != subject:
             continue
 
-        # 🔥 RELAX threshold
+        #  RELAX threshold
         if d > 1.3:
             continue
 
@@ -40,7 +40,7 @@ def search(query, subject=None, k=3):
         if len(results) >= k:
             break
 
-    # 🚨 fallback (CRITICAL)
+    #  fallback 
     if len(results) == 0:
         for i in indices[0][:k]:
             results.append(chunks[i]["text"])
